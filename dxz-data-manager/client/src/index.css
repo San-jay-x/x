@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Exo+2:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Neumorphic base styles */
+body {
+  margin: 0;
+  font-family: 'Exo 2', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #e0e0e0;
+  min-height: 100vh;
+}
+
+/* Custom neumorphic components */
+@layer components {
+  .neu-card {
+    @apply bg-neu-base shadow-neu-raised rounded-xl border-0 transition-all duration-300;
+  }
+  
+  .neu-card:hover {
+    @apply shadow-neu-hover;
+  }
+  
+  .neu-button {
+    @apply bg-neu-base shadow-neu-raised rounded-lg px-6 py-3 font-medium transition-all duration-200 border-0 cursor-pointer;
+  }
+  
+  .neu-button:hover {
+    @apply shadow-neu-hover transform scale-105;
+  }
+  
+  .neu-button:active {
+    @apply shadow-neu-active transform scale-95;
+  }
+  
+  .neu-input {
+    @apply bg-neu-base shadow-neu-pressed rounded-lg px-4 py-3 border-0 outline-none transition-all duration-200;
+  }
+  
+  .neu-input:focus {
+    @apply shadow-neu-glow;
+  }
+  
+  .neu-pressed {
+    @apply shadow-neu-pressed;
+  }
+  
+  .neu-raised {
+    @apply shadow-neu-raised;
+  }
+}
+
+/* Particle animation background */
+.particles-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Custom scrollbar for neumorphic design */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e0e0e0;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #bebebe, #a8a8a8);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #a8a8a8, #909090);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
